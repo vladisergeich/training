@@ -1,0 +1,29 @@
+.title {
+    font-size: 18px;
+    color: red;
+}
+
+.big_blue_paragraph {
+    font-size: 30px;
+    color: blue;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#name {
+    background: yellow;
+}
+
+#family {
+    background: red;
+}
+
+#email {
+    background: blue;
+}
+
+#password {
+    background: white;
+}
