@@ -7,34 +7,31 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="">
-        <h1 class="title">Заголовок первого уровня</h1>
-        <h2>Заголовок второго уровня</h2>
-        <p class="big_blue_paragraph">Параграф</p>
-    </div>
-
-    <div class="">
-        <p><i>Курсивный параграф</i></p>
-        <p><b>Параграф выделенный жирным штрифтом</b></p>
-        <p><s>Зачеркнутый параграф</s></p>
-        <p><u>Подчеркнутый параграф</u></p>
-    </div>
-
-    <div class="">
-        <q>Цитата строчная</q>
-        <blockquote>1. Цитата блочная</blockquote>
-        <blockquote>2. Цитата блочная</blockquote>
-
-        <p>Это длинный параграф,</br> который я принудительно переношу на новую строку</p>
-    </div>
-
-    <div class="">
-        <img src="img.jpg" alt="" style="width: 400px; height: 300px; display: block;">
-    </div>
-
-    <footer>
-        <a href="google.com">Google</a>
-        <a href="yandex.ru">Yandex</a>
-    </footer>
+    <label for="number1">Первое число:</label>
+    <input type="number" id="number1" placeholder="Введите число">
+  
+    <label for="number2">Второе число:</label>
+    <input type="number" id="number2" placeholder="Введите число">
+  
+    <button onclick="compareNumbers()">Сравнить</button>
+  
+    <script>
+      function compareNumbers() {
+        var number1 = parseFloat(document.getElementById('number1').value);
+        var number2 = parseFloat(document.getElementById('number2').value);
+  
+        if (!isNaN(number1) && !isNaN(number2)) {
+          if (number1 > number2) {
+            console.log(number1 + " больше " + number2);
+          } else if (number1 < number2) {
+            console.log(number1 + " меньше " + number2);
+          } else {
+            console.log("Числа равны");
+          }
+        } else {
+          console.log("Введите корректные числа");
+        }
+      }
+    </script>
 </body>
 </html>
