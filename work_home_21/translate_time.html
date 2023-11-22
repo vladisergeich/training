@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Переводчик времени</title>
+</head>
+<body>
+
+  <label for="hoursInput">Введите количество часов:</label>
+  <input type="number" id="hoursInput" placeholder="Введите часы">
+
+  <button onclick="convertToSeconds()">Преобразовать</button>
+
+  <p id="resultSeconds"></p>
+
+  <script>
+    function convertToSeconds() {
+      const hours = document.getElementById('hoursInput').value;
+      const seconds = hours * 60 * 60;
+
+      document.getElementById('resultSeconds').textContent = `Введенное количество часов в секундах: ${seconds}`;
+    }
+  </script>
+
+</body>
+</html>
