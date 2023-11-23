@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Elements</title>
+</head>
+<body>
+
+<script>
+    // Создаем массив текстовых элементов
+    const texts = ["Hello", "World", "JavaScript", "HTML", "CSS"];
+
+    // Выводим каждый текстовый элемент на страницу в теге <p>
+    texts.forEach(text => {
+        const pElement = document.createElement("p");
+        pElement.textContent = text;
+        document.body.appendChild(pElement);
+    });
+</script>
+
+</body>
+</html>

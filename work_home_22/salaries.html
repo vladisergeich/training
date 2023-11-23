@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Calculation</title>
+</head>
+<body>
+
+<script>
+    // Создаем массив с производными значениями (зарплаты сотрудников)
+    const salaries = [3000, 4000, 5000, 6000];
+
+    // Создаем новый массив, подсчитывая 13% от каждой зарплаты
+    const netSalaries = salaries.map(salary => salary - salary * 0.13);
+
+    // Выводим результат в консоль
+    console.log(netSalaries);
+</script>
+
+</body>
+</html>
