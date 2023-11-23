@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+</head>
+<body>
+
+    <div id="articles-container"></div>
+
+<script>
+    const articles = [
+        {
+            title: "Introduction to JavaScript",
+            content: "JavaScript is a programming language that enables interactive web pages.",
+        },
+        {
+            title: "Getting Started with HTML",
+            content: "HTML is a markup language used to structure content on the web.",
+        },
+        {
+            title: "CSS Styling Techniques",
+            content: "CSS is a stylesheet language used for describing the look and formatting of a document.",
+        },
+    ];
+
+    const articlesContainer = document.getElementById('articles-container');
+
+    articles.forEach(article => {
+        const articleTitle = document.createElement('h2');
+        const articleContent = document.createElement('p');
+
+        articleTitle.textContent = article.title;
+        articleContent.textContent = article.content;
+
+        articlesContainer.appendChild(articleTitle);
+        articlesContainer.appendChild(articleContent);
+    });
+</script>
+
+</body>
+</html>
