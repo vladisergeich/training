@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+</head>
+<body>
+
+<div>
+  <input type="text" id="newTask" placeholder="Введите новую задачу">
+  <button onclick="addTaskFunction()">Добавить задачу</button>
+</div>
+
+<ul id="tasksList"></ul>
+
+<script>
+  class Task {
+    constructor(description) {
+      this.description = description;
+      this.completed = false;
+    }
+
+    createList() {
+      const listItem = document.createElement('li');
+      listItem.textContent = this.description;
+
+      const completeButton = document.createElement('button');
+      completeButton.textContent = 'Выполнено';
+      completeButton.onclick = () => {
+        this.completed = true;
+        listItem.style.textDecoration = 'line-through';
+      };
+
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Удалить';
+      deleteButton.onclick = () => {
+        listItem.remove();
+      };
+
+      listItem.appendChild(completeButton);
+      listItem.appendChild(deleteButton);
+
+      return listItem;
+    }
+  }
+
+  function addTaskFunction() {
+    const newTaskInput = document.getElementById('newTask');
+    const tasksList = document.getElementById('tasksList');
+
+    if (newTaskInput.value.trim() !== '') {
+      const task = new Task(newTaskInput.value);
+      const listItem = task.createList();
+      tasksList.appendChild(listItem);
+      newTaskInput.value = '';
+    }
+  }
+
+  document.getElementById('newTask').addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+      addTaskFunction();
+    }
+  });
+</script>
+
+</body>
+</html>
