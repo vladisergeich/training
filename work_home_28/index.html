@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #contentContainer {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+      animation: fadeInOut 0.5s ease-in-out;
+    }
+
+    @keyframes fadeInOut {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+  <title>Toggle Content</title>
+</head>
+<body>
+  <button id="toggleButton">Toggle Content</button>
+  <div id="contentContainer"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleButton = document.getElementById('toggleButton');
+      const contentContainer = document.getElementById('contentContainer');
+
+      toggleButton.addEventListener('click', function () {
+        toggleContent();
+      });
+
+      function toggleContent() {
+        if (contentContainer.style.display === 'none') {
+          contentContainer.innerHTML = `
+            <p>This is some content.</p>
+            <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+            <ul>
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+            </ul>
+          `;
+          contentContainer.style.display = 'block';
+        } else {
+          contentContainer.style.display = 'none';
+        }
+      }
+    });
+  </script>
+</body>
+</html>
